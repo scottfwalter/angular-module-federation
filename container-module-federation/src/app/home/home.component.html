@@ -1,0 +1,26 @@
+
+<h1 class="text-2xl font-normal leading-normal mt-0 mb-2">
+  Welcome to Micro Front Ends with Module Federation
+</h1>
+
+<p  class="text-sm">
+  This is the home page for the container app. Below you will see a nice little counter which can be incremented by 100.  There is a counter service coming from an NPM package
+  which is shared by all the applications here.   This shows that we can share state across applications.
+</p>
+
+
+<h2 class="mt-5">Counter Service Value: {{ counterService.counter}}</h2>
+<button class="py-2 px-8 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400" (click)="incrementCounter()">Increment Counter</button>
+
+
+<h2 class="mt-5">Dynamic Load Component</h2>
+<p class="text-sm mb-5">In one of our child apps we have exposed a component which works with the counter service.
+If your click the button below it will dynamically load a component from anohter app and it to the container app.</p>
+<p class="text-sm mb-5">Before you click the button you might want to watch the network tab.  As it will show a network request (one time) to load the component dynamically.</p>
+<button  class="py-2 px-8 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400" (click)="addComponent()">Dynamically Add Component</button>
+
+<p class="text-sm mb-5">Now that you added the component dynamically.  Why not go ahead and and increment the counter.  All the counter values on this page should be the same.  Thanks to module sharing with module federation.</p>
+<ng-container *ngFor="let p of components">
+    <plugin-proxy [options]="p"></plugin-proxy>
+</ng-container>
+

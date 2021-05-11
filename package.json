@@ -1,0 +1,21 @@
+{
+  "name": "cxone-suite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:container": "cd container-module-federation && npm run start",
+    "start:app1": "cd app1-angular12 && npm run start",
+    "start:all": "concurrently \"npm run start:container\" \"npm run start:app1\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/cli": "^12.0.0-rc.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.2"
+  }
+}

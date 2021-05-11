@@ -1,0 +1,29 @@
+<div>
+
+  <nav class="bg-white py-2 md:py-4">
+    <div class="container px-4 mx-auto md:flex md:items-center">
+
+      <div class="flex justify-between items-center">
+        <a href="#" class="font-bold text-xl text-indigo-600"><svg xmlns="http://www.w3.org/2000/svg" height="60" width="90" viewBox="-28.6146 -55.69225 247.9932 334.1535"><path d="M91.256 43.595c-42.332 2.172-75.995 37.577-75.995 80.931 0 14.627 3.832 28.349 10.535 40.195l-8.118 15.765C6.548 164.704 0 145.388 0 124.526c0-53.278 42.704-96.473 95.382-96.473.753 0 1.504.009 2.252.026L111.412 0h29.434v39.696c29.733 16.337 49.918 48.2 49.918 84.829 0 53.279-42.704 96.473-95.382 96.473-16.079 0-31.229-4.024-44.519-11.132l6.712-13.875c11.262 6.107 24.134 9.571 37.807 9.571 44.249 0 80.121-36.282 80.121-81.037 0-27.971-14.013-52.633-35.325-67.197v76.695l-26.897-25.442V50.453l-33.218 78.891h33.218V116.68l31.141 29.274-32.179 24.705V157.58H68.437l-28.855 65.189-35.708-.699z"/><path d="M140.125 179.637H112.21l27.915-23.914z"/></svg></a>
+        <button class="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle" (click)="toggle()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0"  [ngClass]="{'hidden': !toggleValue, 'flex': toggleValue}" id="navbar-collapse">
+        <a routerLink="" #linkHome="routerLinkActive" [ngClass]="{'text-white rounded bg-indigo-600': linkHome.isActive, 'text-gray-600': !linkHome.isActive}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="">Home</a>
+        <a routerLink="/hello/hello1" #linkApp1Page="routerLinkActive"  [ngClass]="{'text-white rounded bg-indigo-600': linkApp1Page.isActive, 'text-gray-600': !linkApp1Page.isActive}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="">App 1 Page 1</a>
+        <a routerLink="/hello/hello2" #linkApp1Page2="routerLinkActive"  [ngClass]="{'text-white rounded bg-indigo-600': linkApp1Page2.isActive, 'text-gray-600': !linkApp1Page2.isActive}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="">App 1 Page 2</a>
+        <a routerLink="/mfe3/a" #linkApp1Page3="routerLinkActive"  [ngClass]="{'text-white rounded bg-indigo-600': linkApp1Page3.isActive, 'text-gray-600': !linkApp1Page3.isActive}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="">Web Component</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bg-indigo-100 py-6 md:py-12">
+    <div class="container px-4 mx-auto">
+      <h2>Container Version {{version | json}}</h2>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>
