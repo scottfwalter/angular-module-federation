@@ -22,18 +22,18 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 
             // shared: ["@angular/core", "@angular/common", "@angular/router"]
 
-            // shared: {
-            //   "@angular/core": { requiredVersion: "11.0.0-rc.0" },
-            //   "@angular/common": { requiredVersion: "11.0.0-rc.0"},
-            //   "@angular/router": { requiredVersion: "11.0.0-rc.0" }
-            // }
-
             shared: {
-              "@angular/core": { },
-              "@angular/common": { },
-              "@angular/router": { },
-              "rxjs": {}
+              "@angular/core": { requiredVersion: "11.0.0-rc.0" },
+              "@angular/common": { requiredVersion: "11.0.0-rc.0"},
+              "@angular/router": { requiredVersion: "11.0.0-rc.0" }
             }
+
+            // shared: {
+            //   "@angular/core": { },
+            //   "@angular/common": { },
+            //   "@angular/router": { },
+            //   "rxjs": {}
+            // }
           })
       ],
     };

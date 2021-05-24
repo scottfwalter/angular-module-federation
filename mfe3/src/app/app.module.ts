@@ -12,6 +12,7 @@ import { endsWith } from './router.utils';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
+      { matcher: endsWith('mfe3'), component: AComponent},
       { matcher: endsWith('a'), component: AComponent},
       { matcher: endsWith('b'), component: BComponent},
     ])

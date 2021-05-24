@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { startsWith } from './router.utils';
 import { WrapperComponent } from './wrapper/wrapper.component';
 
+// import {startsWith} from './router.utils';
+
 import { WebComponentWrapper, WebComponentWrapperOptions } from '@angular-architects/module-federation-tools';
 
 const routes: Routes = [
@@ -19,18 +21,18 @@ const routes: Routes = [
         exposedModule: './HelloModule',
       }).then((m) => m.HelloModule),
   },
-  { matcher: startsWith('mfe3'), component: WrapperComponent, data: { importName: 'mfe3', elementName: 'mfe3-element' }},
-  // {
-  //   path: 'mfe3',
-  //   component: WebComponentWrapper,
-  //   data: {
-  //     remoteEntry: 'http://localhost:4203/remoteEntry.js',
-  //     // remoteEntry: 'https://gray-pond-030798810.azurestaticapps.net//remoteEntry.js',
-  //     remoteName: 'mfe3',
-  //     exposedModule: './web-components',
-  //     elementName: 'mfe3-element'
-  //   } as WebComponentWrapperOptions
-  // },
+  // { matcher: startsWith('mfe3'), component: WrapperComponent, data: { importName: 'mfe3', elementName: 'mfe3-element' }},
+  {
+    // path: 'mfe3',
+    matcher: startsWith('mfe3'),
+    component: WebComponentWrapper,
+    data: {
+      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      remoteName: 'mfe3',
+      exposedModule: './web-components',
+      elementName: 'mfe3-element'
+    } as WebComponentWrapperOptions
+  },
 
 
 
