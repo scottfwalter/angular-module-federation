@@ -24,19 +24,19 @@ const routes: Routes = [
   // { matcher: startsWith('mfe3'), component: WrapperComponent, data: { importName: 'mfe3', elementName: 'mfe3-element' }},
   {
     // path: 'mfe3',
-    matcher: startsWith('mfe3'),
+    matcher: startsWith('app2'),
     component: WebComponentWrapper,
     data: {
       remoteEntry: 'http://localhost:4203/remoteEntry.js',
-      remoteName: 'mfe3',
+      remoteName: 'app2',
       exposedModule: './web-components',
-      elementName: 'mfe3-element'
+      elementName: 'app2-element'
     } as WebComponentWrapperOptions
   },
 
 
 
-  { matcher: startsWith('mfe4'), component: WrapperComponent, data: { importName: 'mfe4', elementName: 'mfe4-element' }},
+  { matcher: startsWith('app3'), component: WrapperComponent, data: { importName: 'app3', elementName: 'app3-element' }},
 ];
 
 @NgModule({

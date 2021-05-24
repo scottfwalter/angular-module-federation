@@ -7,10 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:container": "cd container-module-federation && npm run start",
     "start:app1": "cd app1-angular-12.0.0 && npm run start",
-    "start:app2": "cd app2-angular12 && npm run start",
-    "start:mfe3": "cd mfe3 && npm run start",
-    "start:mfe4": "cd mfe4 && npm run start",
-    "start:all": "concurrently \"npm run start:container\" \"npm run start:app1\" \"npm run start:app2\" \"npm run start:mfe3\" \"npm run start:mfe4\""
+    "start:app2": "cd app2-angular-11.0.0-rc.0 && npm run start",
+    "start:app3": "cd app3-angular-11.0.0-rc.0 && npm run start",
+    "start:all": "concurrently \"npm run start:container\" \"npm run start:app1\" \"npm run start:app2\" \"npm run start:app3\""
   },
   "keywords": [],
   "author": "",
