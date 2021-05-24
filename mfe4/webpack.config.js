@@ -2,8 +2,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 
     module.exports = {
       output: {
-        publicPath: "http://localhost:4203/",
-        uniqueName: "mfe3"
+        publicPath: "http://localhost:4205/",
+        uniqueName: "mfe4"
       },
       optimization: {
         // Only needed to bypass a temporary bug
@@ -13,8 +13,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
         new ModuleFederationPlugin({
 
             // For remotes (please adjust)
-            name: "mfe3",
-            library: { type: "var", name: "mfe3" },
+            name: "mfe4",
+            library: { type: "var", name: "mfe4" },
             filename: "remoteEntry.js",
             exposes: {
                 './web-components': './src/bootstrap.ts',
@@ -22,17 +22,11 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 
             // shared: ["@angular/core", "@angular/common", "@angular/router"]
 
-            // shared: {
-            //   "@angular/core": { requiredVersion: "11.0.0-rc.0" },
-            //   "@angular/common": { requiredVersion: "11.0.0-rc.0"},
-            //   "@angular/router": { requiredVersion: "11.0.0-rc.0" }
-            // }
-
             shared: {
-              "@angular/core": { },
-              "@angular/common": { },
-              "@angular/router": { },
-              "rxjs": {}
+              // "@angular/core": { singleton: true, strictVersion: true },
+              "@angular/core": { requiredVersion: "11.0.0-rc.0" },
+              "@angular/common": { requiredVersion: "11.0.0-rc.0"},
+              "@angular/router": { requiredVersion: "11.0.0-rc.0" }
             }
           })
       ],
