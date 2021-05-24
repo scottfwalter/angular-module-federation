@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@angular-architects/module-federation-tools": "^0.0.1",
     "@angular/cli": "^12.0.0-rc.1"
   },
   "devDependencies": {
