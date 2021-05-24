@@ -30,7 +30,7 @@ module.exports = {
           "@angular/core": { singleton: true, strictVersion: true },
           "@angular/common": { singleton: true, strictVersion: true },
           "@angular/router": { singleton: true, strictVersion: true },
-          // "components-lib": { singleton: true, eager: true, requiredVersion: false, import: "/Users/scott/cxone/cxone-suite/app1-angular12/node_modules/components-lib"}
+          // "components-lib": { singleton: true, eager: true, requiredVersion: false, import: "/Users/scott/cxone/cxone-suite/app1-angular-12.0.0/node_modules/components-lib"}
           "components-lib": { singleton: true, strictVersion: true, requiredVersion: false }
           // ...sharedMappings.getDescriptors()
         }
