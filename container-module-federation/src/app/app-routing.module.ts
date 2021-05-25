@@ -37,6 +37,16 @@ const routes: Routes = [
 
 
   { matcher: startsWith('app3'), component: WrapperComponent, data: { importName: 'app3', elementName: 'app3-element' }},
+    {
+      path: 'app4',
+      component: WebComponentWrapper,
+      data: {
+        remoteEntry: 'http://localhost:4501/remoteEntry.js',
+        remoteName: 'react',
+        exposedModule: './web-components',
+        elementName: 'react-element'
+      } as WebComponentWrapperOptions
+    },
 ];
 
 @NgModule({
