@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
 import { APP_VERSION } from './app.version'
+// import { CounterService } from 'components-lib';
 
 declare const require: any;
 
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit {
   ngVersion = VERSION;
 
   constructor(private router: Router) { }
+  // constructor(private router: Router, private counterService: CounterService) { }
 
   ngOnInit(): void {
     this.router.navigateByUrl(location.pathname.substr(1));
