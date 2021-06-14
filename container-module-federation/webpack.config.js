@@ -4,44 +4,45 @@ const path = require("path");
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
-  path.join(__dirname, 'tsconfig.json'),
-  // ['components-lib']);
-  []);
+  path.join(__dirname, 'tsconfig.json')
+  // path.join(__dirname, '../../tsconfig.json'),
+  // ['auth-lib']
+);
 
 module.exports = {
   output: {
-    uniqueName: "container-module-federation"
+    uniqueName: "shell",
+    publicPath: "auto"
   },
   optimization: {
-    // Only needed to bypass a temporary bug
     runtimeChunk: false
+  },
+  resolve: {
+    alias: {
+      ...sharedMappings.getAliases(),
+    }
   },
   plugins: [
     new ModuleFederationPlugin({
-        // For hosts (please adjust)
-        remotes: {
-            // "mfe1": "mfe1@http://localhost:4201/remoteEntry.js",
-            // 'mfe3': "mfe3@http://localhost:4203/remoteEntry.js",
-            'app3': "app3@http://localhost:4205/remoteEntry.js"
-        },
 
-        shared: {
-          "@angular/core": { singleton: true, strictVersion: true },
-          "@angular/common": { singleton: true, strictVersion: true },
-          "@angular/router": { singleton: true, strictVersion: true },
-          // "components-lib": { singleton: true, eager: true, strictVersion: true, import: "/Users/scott/cxone/cxone-suite/app1-angular12/node_modules/components-lib"}
-          "components-lib": { singleton: true, strictVersion: true, requiredVersion: false}
-          // ...sharedMappings.getDescriptors()
-        }
+      // For hosts (please adjust)
+      remotes: {
+        'app3': "app3@http://localhost:4205/remoteEntry.js"
+      },
 
-        // shared: {
-        //   "@angular/core": { singleton: true, strictVersion: true, requiredVersion: '12.0.0-rc.1' },
-        //   "@angular/common": { singleton: true, strictVersion: true, requiredVersion: '12.0.0-rc.1' },
-        //   "@angular/router": { singleton: true, strictVersion: true, requiredVersion: '12.0.0-rc.1' },
-        //   ...sharedMappings.getDescriptors()
-        // }
+      shared: {
+        "@angular/core": { requiredVersion: '12.0.0' },
+        "@angular/common": { requiredVersion: '12.0.0' },
+        "@angular/router": { requiredVersion: '12.0.0' },
+        "@angular/common/http": { requiredVersion: '12.0.0' },
+        "components-lib": { singleton: true, strictVersion: true, requiredVersion: false},
+
+        // Uncomment for sharing lib of an Angular CLI or Nx workspace
+        ...sharedMappings.getDescriptors()
+      }
 
     }),
+    // Uncomment for sharing lib of an Angular CLI or Nx workspace
     sharedMappings.getPlugin(),
   ],
 };

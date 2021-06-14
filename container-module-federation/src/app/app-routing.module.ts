@@ -5,7 +5,6 @@ import { HomeComponent } from './home/home.component';
 import { startsWith } from './router.utils';
 import { WrapperComponent } from './wrapper/wrapper.component';
 
-// import {startsWith} from './router.utils';
 
 import { WebComponentWrapper, WebComponentWrapperOptions } from '@angular-architects/module-federation-tools';
 
@@ -21,9 +20,7 @@ const routes: Routes = [
         exposedModule: './HelloModule',
       }).then((m) => m.HelloModule),
   },
-  // { matcher: startsWith('mfe3'), component: WrapperComponent, data: { importName: 'mfe3', elementName: 'mfe3-element' }},
   {
-    // path: 'mfe3',
     matcher: startsWith('app2'),
     component: WebComponentWrapper,
     data: {
@@ -33,9 +30,6 @@ const routes: Routes = [
       elementName: 'app2-element'
     } as WebComponentWrapperOptions
   },
-
-
-
   { matcher: startsWith('app3'), component: WrapperComponent, data: { importName: 'app3', elementName: 'app3-element' }},
     {
       path: 'app4',

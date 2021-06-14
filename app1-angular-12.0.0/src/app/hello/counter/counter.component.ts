@@ -10,7 +10,7 @@ import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 })
 export class CounterComponent implements OnInit {
 
-  constructor(private counterService: CounterService, private eventBusService: EventBusService) {}
+  constructor(public counterService: CounterService, private eventBusService: EventBusService) {}
 
   incrementCounter() {
     this.counterService.incremet(100);

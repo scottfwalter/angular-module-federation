@@ -1,5 +1,6 @@
 import { OnInit, VERSION } from '@angular/core';
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
+import { shareNgZone } from '@angular-architects/module-federation-tools';
 import { EventBusService } from 'components-lib';
 
 @Component({
@@ -12,7 +13,9 @@ export class AppComponent  implements OnInit  {
   toggleValue = false;
   version = VERSION;
 
-  constructor(private  eventBusService: EventBusService) {}
+  constructor(private ngZone: NgZone, private  eventBusService: EventBusService) {
+    shareNgZone(ngZone);
+  }
 
   ngOnInit() {
     this.eventBusService.initializeEventBus();

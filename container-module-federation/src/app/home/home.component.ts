@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   components: any[] = [];
 
-  constructor(private counterService: CounterService) {}
+  constructor(public counterService: CounterService) {}
 
   ngOnInit() {}
 
