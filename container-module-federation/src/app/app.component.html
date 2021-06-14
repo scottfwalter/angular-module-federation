@@ -17,6 +17,7 @@
         <a routerLink="/app2/b" #linkApp2="routerLinkActive"  [ngClass]="{'text-white rounded bg-indigo-600': linkApp2.isActive, 'text-gray-600': !linkApp2.isActive}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="">App 2</a>
         <a routerLink="/app3/a" #linkApp3="routerLinkActive"  [ngClass]="{'text-white rounded bg-indigo-600': linkApp3.isActive, 'text-gray-600': !linkApp3.isActive}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="">App 3</a>
         <a routerLink="/app4" #linkApp4="routerLinkActive"  [ngClass]="{'text-white rounded bg-indigo-600': linkApp4.isActive, 'text-gray-600': !linkApp4.isActive}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="">App 4</a>
+        <a routerLink="/goodbye/hello1" #linkApp1Page="routerLinkActive"  [ngClass]="{'text-white rounded bg-indigo-600': linkApp1Page.isActive, 'text-gray-600': !linkApp1Page.isActive}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="">Goodbye</a>
       </div>
     </div>
   </nav>

@@ -1,4 +1,5 @@
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+//const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ModuleFederationPlugin = require("webpack").container;
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
 

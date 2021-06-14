@@ -1,0 +1,21 @@
+
+{
+    "apps": [
+        {
+            "type":  "angularModule",
+            "remoteEntry": "http://localhost:4201/remoteEntry.js",
+            "remoteName": "mfe1",
+            "exposedModule": "./HelloModule",
+            "angularModule": "MyAppModule",
+            "path": "app1"
+        },
+        {
+            "type":  "webcomponent",
+            "remoteEntry": "http://localhost:4202/remoteEntry.js",
+            "remoteName": "mfe1",
+            "exposedModule": "./HelloModule",
+            "element-name": "app2-element",
+            "startsWith": "app2"
+        }
+    ]
+}
