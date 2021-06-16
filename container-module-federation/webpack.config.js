@@ -26,9 +26,9 @@ module.exports = {
     new ModuleFederationPlugin({
 
       // For hosts (please adjust)
-      remotes: {
-        'app3': "app3@http://localhost:4205/remoteEntry.js"
-      },
+      // remotes: {
+      //   'app3': "app3@http://localhost:4205/remoteEntry.js"
+      // },
 
       shared: {
         "@angular/core": { requiredVersion: '12.0.0' },

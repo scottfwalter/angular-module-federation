@@ -30,7 +30,17 @@ const routes: Routes = [
       elementName: 'app2-element'
     } as WebComponentWrapperOptions
   },
-  { matcher: startsWith('app3'), component: WrapperComponent, data: { importName: 'app3', elementName: 'app3-element' }},
+  {
+    matcher: startsWith('app3'),
+    component: WebComponentWrapper,
+    data: {
+      remoteEntry: 'http://localhost:4205/remoteEntry.js',
+      remoteName: 'app3',
+      exposedModule: './web-components',
+      elementName: 'app3-element'
+    } as WebComponentWrapperOptions
+  },
+  // { matcher: startsWith('app3'), component: WrapperComponent, data: { importName: 'app3', elementName: 'app3-element' }},
     {
       path: 'app4',
       component: WebComponentWrapper,
